@@ -98,9 +98,27 @@ class Manager(object):
                     elif key in self.BOOLEAN_FIELDS:
                         val = True if val.lower() == 'true' else False
                     elif key in self.DATETIME_FIELDS:
-                        val = parse(val)
+                        try:
+                            parsed_val = parse(val).date()   
+                            val = parsed_val
+                        except Exception:
+                            print unicode.format(
+                                "Warning! Could not convert "
+                                "DATE field {} value: {}. Returning "
+                                "received value as a 'unicode' object."
+                                , key, val
+                            )
                     elif key in self.DATE_FIELDS:
-                        val = parse(val).date()
+                        try:
+                            parsed_val = parse(val).date()   
+                            val = parsed_val
+                        except Exception:
+                            print unicode.format(
+                                "Warning! Could not convert "
+                                "DATE field {} value: {}. Returning "
+                                "received value as a 'unicode' object."
+                                , key, val
+                            )
                     elif key in self.INTEGER_FIELDS:
                         val = int(val)
                     data = val
