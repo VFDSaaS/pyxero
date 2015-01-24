@@ -21,7 +21,7 @@ def singular(word):
 
 class Manager(object):
     DECORATED_METHODS = ('get', 'save', 'filter', 'all', 'put',
-                         'get_attachments', 'get_attachment_data', 'put_attachment_data', 'get_report')
+                         'get_attachments', 'get_attachment_data', 'put_attachment_data')
     DATETIME_FIELDS = ('UpdatedDateUTC', 'Updated', 'FullyPaidOnDate',
                        'DateTimeUTC', 'CreatedDateUTC', )
     DATE_FIELDS = ('DueDate', 'Date',  'PaymentDate',

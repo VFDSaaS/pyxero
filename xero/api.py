@@ -21,7 +21,7 @@ class Xero(object):
             'Organisation',
             'Payments',
             'RepeatingInvoices',
-            'Reports',
+            #'Reports',
             'TaxRates',
             'TrackingCategories',
             'Users',
