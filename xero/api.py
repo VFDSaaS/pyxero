@@ -33,4 +33,7 @@ class Xero(object):
         # the lowercase name of the object and attach it to an
         # instance of a Manager object to operate on it
         for name in self.OBJECT_LIST:
+            if "Reports" == name:
+                setattr(self, name.lower(), ReportsManager(name, credentials))
+                continue 
             setattr(self, name.lower(), Manager(name, credentials))

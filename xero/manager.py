@@ -21,7 +21,7 @@ def singular(word):
 
 class Manager(object):
     DECORATED_METHODS = ('get', 'save', 'filter', 'all', 'put',
-                         'get_attachments', 'get_attachment_data', 'put_attachment_data')
+                         'get_attachments', 'get_attachment_data', 'put_attachment_data', 'get_report')
     DATETIME_FIELDS = ('UpdatedDateUTC', 'Updated', 'FullyPaidOnDate',
                        'DateTimeUTC', 'CreatedDateUTC', )
     DATE_FIELDS = ('DueDate', 'Date',  'PaymentDate',
@@ -396,3 +396,9 @@ class Manager(object):
     def _all(self):
         uri = '/'.join([self.base_url, self.name])
         return uri, {}, 'get', None, None, False
+    
+    def _get_report(self):
+        """
+        """
+        return None
+        
